@@ -2,73 +2,76 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const figlet = require('figlet');
 const path = require('path');
-const manager = [];
-const engineers = [];
-const interns = [];
-const generateHtml = require('./src/generateHtml')
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const generateHtml = require('./src/generateHtml');
+const newTeamArray = [];
 
-function asciText() {
-  figlet('Team Profile\n\n Generator', function(err, data) {
-    if (err) {
-        console.log('Something went wrong...');
-        console.dir(err);
-        return;
-    }
-    console.log(data)
-    promptMenu();
+// function asciText() {
+//   figlet('Team Profile\n\n Generator', function(err, data) {
+//     if (err) {
+//         console.log('Something went wrong...');
+//         console.dir(err);
+//         return;
+//     }
+//     console.log(data)
+//     promptMenu();
 
-  });
-  }
+//   });
+//   }
   
-  asciText()
+//   asciText()
 
-  
-
-
-function promptMenu() {
   function createManager() {
-    inquirer.prompt ([
+    inquirer.prompt([
       {
-        type: 'input',
-        message: 'Please enter name',
-        name: 'name',
+        type: "input",
+        message: "Please enter the manager name",
+        name: "name",
+      },
+      {
+        type: "input",
+        message: "Please enter the manager's ID",
+        name: "id",
+      },
+      {
+        type: "input",
+        message: "Please enter the manager's office number",
+        name: "officeNumber",
       },
     ])
-    
-    .then(response => {
+    .then((response) => {
       console.log(response)
-    });
+      const manager = new Manager(response.name, response.id, response.email, response.officeNumber)
+    })
   }
 
-  function createEngineer(){
 
-  }
 
-  function createIntern(){
 
-  }
 
-  function createTeam() {
-    inquirer.prompt ([
-      {
-        type: 'list',
-        message: 'What team member would you like to add?',
-        name: 'choice',
-        choices: ["Engineer", "Intern", "Im done"]
-      },
-    ])
-    
-    .then(response => {
-      if (response.choice === "Engineer") {
-        createEngineer()
-      } else if (response.choice === "Intern") {
-        createIntern();
-      } else {
-        fs.writeFileSync(path.join(__dirname, "/dist/team.html"), generateHtml(manager, engineers, interns))
-      }
-    });
-  }
 
-   createManager()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-}
+
