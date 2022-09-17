@@ -41,11 +41,63 @@ const newTeamArray = [];
         name: "officeNumber",
       },
     ])
-    .then((response) => {
-      console.log(response)
-      const manager = new Manager(response.name, response.id, response.email, response.officeNumber)
+    .then((managerData) => {
+      console.log(managerData)
+      const manager = new Manager(managerData.name, managerData.id, managerData.email, managerData.officeNumber)
+
+      newTeamArray.push(manager)
+    });
+  };
+
+  function addEmployee() {
+    inquirer.prompt([
+      {
+        type: "list",
+        message: "Please choose the employees role",
+        name: "role",
+        choices: ["Engineer", "Intern"],
+      },
+      {
+        type: "input",
+        message: "Please enter the employees name",
+        name: "name",
+      },
+      {
+        type: "input",
+        message: "Please enter the employees ID",
+        name: "id",
+      },
+      {
+        type: "input",
+        message: "Please enter the employees email",
+        name: "email",
+      },
+      {
+        type: "input",
+        message: "Please enter the employees github username",
+        name: "github",
+      },
+      {
+        type: "input",
+        message: "Please enter the intern's school",
+        name: "school",
+      },
+    ])
+    .then((employeeData) => {
+      console.log(employeeData)
+      let employee
+
+      if (employeeData.role === "Engineer") {
+        employee = new Engineer(employeeData.name, employeeData.id, employeeData.email, employeeData.github)
+      } else if (employeeData.role === "Intern") {
+        employee = new Intern(employeeData.name, employeeData.id, employeeData.email, employeeData.school)
+      }
+
+      newTeamArray.push(employee)
     })
   }
+
+
 
 
 
