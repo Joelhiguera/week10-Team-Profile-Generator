@@ -12,6 +12,8 @@ This is a CLI application that takes in information about employees on a team an
 
 -Inquirer 
 
+- Jest
+
 ## User Story
 AS A manager
 
