@@ -9,7 +9,7 @@ const teamArray = [];
 function promptMenu() {
     startHtml();
     addEmployee();
-
+    
 }
 
 function addEmployee() {
@@ -172,3 +172,20 @@ function generateHtml(member) {
     
 }
 
+function finishHtml() {
+    const html = ` </div>
+    </div>
+    </main>
+</body>
+</html>`;
+
+    fs.appendFile("./dist/team.html", html, function (err) {
+        if (err) {
+            console.log(err);
+        };
+    });
+    console.log("team has been completed!");
+}
+
+
+promptMenu();
