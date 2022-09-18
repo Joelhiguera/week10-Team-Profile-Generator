@@ -29,6 +29,6 @@ Run "npm start" to start the application
 ## Links
 Github Repo: https://github.com/Joelhiguera/week12_employee_tracker
 
-Demonstration Video: 
+Demonstration Video: https://drive.google.com/file/d/1EbRJ_bFfW4-BI2IASz3NNgDmlzCUT1zc/view
 
 
