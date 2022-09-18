@@ -27,7 +27,7 @@ In your terminal, please run "npm install" to install all dependancies in the pa
 Run "npm start" to start the application
 
 ## Links
-Github Repo: https://github.com/Joelhiguera/week12_employee_tracker
+Github Repo: https://github.com/Joelhiguera/week10-Team-Profile-Generator
 
 Demonstration Video: https://drive.google.com/file/d/1EbRJ_bFfW4-BI2IASz3NNgDmlzCUT1zc/view
 
