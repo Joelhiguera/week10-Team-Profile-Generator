@@ -2,7 +2,3 @@
   box-sizing: border-box;
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-}

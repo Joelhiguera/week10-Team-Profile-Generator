@@ -90,8 +90,8 @@ function startHtml() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
         <title>Team Profile</title>
     </head>
 
@@ -121,7 +121,7 @@ function generateHtml(member) {
         let data = "";
         if (role === "Engineer") {
             const gitHub = member.getGithub();
-            data = `<div class="col-6">
+            data = `<div class="col-4">
             <div class="shadow p-3 mb-5 bg-white rounded card mx-auto mb-3" style="width: 18rem">
             <h5 class=" bg-primary text-center text-white card-header">${name}<br /><br />Engineer</h5>
             <ul class="list-group list-group-flush">
@@ -133,7 +133,7 @@ function generateHtml(member) {
         </div>`;
         } else if (role === "Intern") {
             const school = member.getSchool();
-            data = `<div class="col-6">
+            data = `<div class="col-4">
             <div class="shadow p-3 mb-5 bg-white rounded card mx-auto mb-3" style="width: 18rem">
             <h5 class="bg-primary text-center text-white card-header">${name}<br /><br />Intern</h5>
             <ul class="list-group list-group-flush">
@@ -145,7 +145,7 @@ function generateHtml(member) {
         </div>`;
         } else {
             const officePhone = member.getOfficeNumber();
-            data = `<div class="col-6">
+            data = `<div class="col-4">
             <div class="shadow p-3 mb-5 bg-white rounded card mx-auto mb-3" style="width: 18rem">
             <h5 class="bg-primary text-center text-white card-header">${name}<br /><br />Manager</h5>
             <ul class="list-group list-group-flush">
